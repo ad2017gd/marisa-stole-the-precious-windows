@@ -1,0 +1,43 @@
+﻿<Window x:Class="wip.CustomDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wip"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        MinWidth="200"
+        MinHeight="120"
+        Title="CustomDialogWindow">
+    <Grid>
+        <StackPanel Orientation="Vertical" SnapsToDevicePixels="True">
+            <StackPanel x:Name="StackPanelRoot" Orientation="Vertical">
+                <StackPanel x:Name="StackPanel" Orientation="Horizontal" Background="White" Margin="11,23,32,23">
+                    <Image x:Name="IconImage" Visibility="{Binding HasIcon}" Width="32" VerticalAlignment="Top" Height="32" Source="{Binding DialogIcon}" Margin="10,0,9,0"></Image>
+                    <TextBlock x:Name="Label" TextWrapping="Wrap" MaxWidth="368" VerticalAlignment="Center" Text="{Binding LabelText}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <DockPanel HorizontalAlignment="Stretch" Background="#f0f0f0" Width="Auto">
+                <ItemsControl x:Name="tStack" Grid.Column="0" ItemsSource="{Binding Buttons}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="15,9,6,9" IsItemsHost="True"  Orientation="Horizontal" HorizontalAlignment="Right"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:DialogStyleButton Text="{Binding Path=Text}" HorizontalAlignment="Right" Margin="0,0,9,0"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="0,0,9,0"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

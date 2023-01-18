@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="wip.DialogStyleButton"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:wip"
+             mc:Ignorable="d" >
+    <Grid>
+        <Button x:Name="Button">
+            
+            <Button.Style>
+                <Style>
+                    <Setter Property="Button.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsFocused" Value="True">
+                                        <Setter TargetName="BottomRight1" Property="Border.BorderBrush" Value="#646464"></Setter>
+                                        <Setter TargetName="TopLeft1" Property="Border.BorderBrush" Value="#646464"></Setter>
+
+                                        <Setter TargetName="BottomRight2" Property="Border.BorderBrush" Value="#a0a0a0"></Setter>
+                                        <Setter TargetName="TopLeft2" Property="Border.BorderBrush" Value="#ffffff"></Setter>
+
+                                    </Trigger>
+                                    
+                                    <Trigger Property="Button.IsPressed" Value="True">
+                                        <Setter TargetName="BottomRight1" Property="Border.BorderBrush" Value="#7e7e7e"></Setter>
+                                        <Setter TargetName="TopLeft1" Property="Border.BorderBrush" Value="#7e7e7e"></Setter>
+
+                                        <Setter TargetName="BottomRight2" Property="Border.BorderBrush" Value="#cecece"></Setter>
+                                        <Setter TargetName="TopLeft2" Property="Border.BorderBrush" Value="#cecece"></Setter>
+
+
+                                        <Setter TargetName="Gridder" Property="Grid.Background" Value="#f0f0f0"></Setter>
+                                    </Trigger>
+                                    
+                                </ControlTemplate.Triggers>
+                                
+                                <Border x:Name="BottomRight1" BorderThickness="0,0,1,1" BorderBrush="#ff696969">
+                                    <Border x:Name="TopLeft1" BorderThickness="1,1,0,0" BorderBrush="#ffffffff">
+                                        <Border x:Name="BottomRight2" BorderThickness="0,0,1,1" BorderBrush="#ffa0a0a0">
+                                            <Border x:Name="TopLeft2" BorderThickness="1,1,0,0" BorderBrush="#ffe3e3e3">
+                                                <Grid x:Name="Gridder">
+                                                    <Label Padding="0" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                           Foreground="Black"
+                                                           Margin="0" FontFamily="Segoe UI" Content="{Binding Text}"/>
+                                                    <Grid.Style>
+                                                        <Style>
+                                                            <Setter Property="Button.MinWidth" Value="71"></Setter>
+                                                            <Setter Property="Button.MinHeight" Value="19"></Setter>
+                                                            <Setter Property="Button.Background" Value="#fff0f0f0"></Setter>
+                                                            
+                                                        </Style>
+                                                    </Grid.Style>
+                                                </Grid>
+                                            </Border>
+                                        </Border>
+                                    </Border>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    
+                    
+
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</UserControl>
