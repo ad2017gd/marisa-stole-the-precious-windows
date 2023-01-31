@@ -3,4 +3,4 @@
 
 [Direct download link](https://github.com/ad2017gd/marisa-stole-the-precious-windows/releases/download/V1.0/marisa.zip)
 
-since this got a lot of views also check out [rainbowtaskbar](https://github.com/ad2017gd/RainbowTaskbar) !!!
+**since this got a lot of views also check out [rainbowtaskbar](https://github.com/ad2017gd/RainbowTaskbar) !!!**
